@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.utils</groupId>
+  <artifactId>CommonUtils</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>CommonUtils Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <!--swagger2-->
+	<springfox-swagger2.version>2.4.0</springfox-swagger2.version>
+	<jackson-databind.version>2.9.9</jackson-databind.version>
+	<!-- springmvc -->
+	<spring.version>4.0.9.RELEASE</spring.version>
+	<commons-lang3.version>3.1</commons-lang3.version>
+	<commons-lang.version>2.6</commons-lang.version>
+	<dom4j.version>1.6.1</dom4j.version>
+	<!-- pinyin4j -->
+	<pinyin4j.version>2.5.1</pinyin4j.version>
+	<!-- json start -->
+	<jackson.version>1.8.4</jackson.version>
+	<json-lib.version>2.1</json-lib.version>
+	<fastjson-lib.version>1.2.31</fastjson-lib.version>
+	<gson.version>2.2.4</gson.version>
+	<!-- jeasypoi 工具类  -->
+    <jeasypoi.version>2.2.0</jeasypoi.version>
+    <commons-email.version>1.2</commons-email.version>
+    <!-- freemarker -->
+	<freemarker.version>2.3.19</freemarker.version>
+	<!-- 辅助依赖包 -->
+	<jodd.version>3.3.7</jodd.version>
+	<ant.version>1.6.5</ant.version>
+	<commons-fileupload.version>1.3.3</commons-fileupload.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- json转换 -->
+    <dependency>  
+	    <groupId>com.fasterxml.jackson.core</groupId>  
+	    <artifactId>jackson-databind</artifactId>  
+	    <version>${jackson-databind.version}</version>  
+	</dependency>
+	<dependency>  
+	    <groupId>javax.servlet</groupId>  
+	    <artifactId>javax.servlet-api</artifactId>  
+	    <version>3.1.0</version>  
+	</dependency>
+	<!-- http相关 -->
+	<dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.5.2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpcore</artifactId>
+        <version>4.4.5</version>
+    </dependency>
+    <!-- fastDFS -->
+    <dependency>
+         <groupId>org.csource</groupId>
+	     <artifactId>fastdfs-client-java</artifactId>
+	     <version>1.25</version>
+    </dependency>
+    <dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>1.3.2</version>
+	</dependency>
+	<!-- log4j12 -->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>1.6.1</version>
+	</dependency>
+	<!-- SPRING start -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aspects</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- spring orm -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- spring mvc -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- SPRING end -->
+	<!-- commons-lang -->
+	<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>${commons-lang.version}</version>
+	</dependency>
+	<!-- commons-lang3 -->
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>${commons-lang3.version}</version>
+	</dependency>
+	<!-- dom4j -->
+	<dependency>
+		<groupId>dom4j</groupId>
+		<artifactId>dom4j</artifactId>
+		<version>${dom4j.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>xml-apis</groupId>
+				<artifactId>xml-apis</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<!-- pinyin4j -->
+	<dependency>
+	    <groupId>com.belerweb</groupId>
+	    <artifactId>pinyin4j</artifactId>
+	    <version>${pinyin4j.version}</version>
+	</dependency>
+	<!-- JSON begin -->
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>net.sf.json-lib</groupId>
+		<artifactId>json-lib</artifactId>
+		<version>${json-lib.version}</version>
+		<classifier>jdk15</classifier>
+	</dependency>
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>fastjson</artifactId>
+		<version>${fastjson-lib.version}</version>
+	</dependency> 
+     <dependency>
+         <groupId>com.google.code.gson</groupId>
+         <artifactId>gson</artifactId>
+         <version>${gson.version}</version>
+     </dependency>
+	<!-- JSON end -->
+	<!-- 自定义的依赖包  begin -->
+	<dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi</artifactId>
+          <version>3.14</version>
+     </dependency>
+     <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml-schemas</artifactId>
+          <version>3.14</version>
+     </dependency>
+     <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-scratchpad</artifactId>
+          <version>3.14</version>
+     </dependency>
+     <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml</artifactId>
+          <version>3.14</version>
+     </dependency>
+     <!-- update-begin-author:taoYan date:20180828 for:jxls导出excel -->
+	<dependency>
+	    <groupId>net.sf.jxls</groupId>
+	    <artifactId>jxls-core</artifactId>
+	    <version>1.0.6</version>
+	</dependency>
+	<!-- commons-email -->
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-email</artifactId>
+		<version>${commons-email.version}</version>
+	</dependency>
+	<!-- freemarker -->
+	<dependency>
+	    <groupId>org.freemarker</groupId>
+	    <artifactId>freemarker</artifactId>
+	    <version>${freemarker.version}</version>
+	</dependency>
+	<!-- 辅助依赖包 _start -->
+	<dependency>
+		<groupId>org.jodd</groupId>
+		<artifactId>jodd</artifactId>
+		<version>${jodd.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>ant</groupId>
+		<artifactId>ant</artifactId>
+		<version>${ant.version}</version>
+	</dependency>
+    <!-- 辅助依赖包 _end -->
+    <!-- commons-fileupload -->
+	<dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>${commons-fileupload.version}</version>
+	</dependency>
+  </dependencies>
+
+  <build>
+    <finalName>CommonUtils</finalName>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
